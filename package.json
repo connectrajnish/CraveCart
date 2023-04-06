@@ -4,6 +4,8 @@
   "description": "Food ordering website",
   "main": "index.js",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +17,13 @@
   "bugs": {
     "url": "https://github.com/connectrajnish/CraveCart/issues"
   },
-  "homepage": "https://github.com/connectrajnish/CraveCart#readme"
+  "homepage": "https://github.com/connectrajnish/CraveCart#readme",
+  "dependencies": {
+    "parcel": "^2.8.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
+  }
 }
