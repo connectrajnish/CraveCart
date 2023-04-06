@@ -1,0 +1,7 @@
+npm install react react-dom parcel
+in html file create root div to inject
+in js file
+    import react, react-dom and keep type of js file as module
+    create element or components
+    create root in reactdom by fetching the root div of html
+    then using render method of reactdom render the component

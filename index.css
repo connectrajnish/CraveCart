@@ -1,0 +1,41 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 5px;
+    align-items: center;
+    border: 1px solid black;
+    text-shadow: 2px 2px 10px rgb(168, 167, 167);
+}
+
+/* ul elements that are direct children of elements with the class .nav-items. */
+.nav-items > ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+.nav-items > ul > li{
+    padding: 10px;
+}
+.logo{
+    height: 75px;
+    width: 75px;
+    box-shadow: 1px 1px 10px rgb(168, 167, 167);
+    border-radius: 50%;
+}
+
+.card{
+    width: 200px;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;;
+}
+
+.card > img{
+    width: 100%;
+}
+
+.restaurant-list{
+    display: flex;
+    flex-wrap: wrap;
+} 
