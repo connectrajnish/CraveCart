@@ -1,25 +1,33 @@
-import { useState } from "react";
-import restaurantList  from "../constants";
+import { useState, useEffect } from "react";
+// import restaurantList  from "../constants";
 import RestaurantCard from "./RestaurantCard"
 
 
 function filterData(searchTxt, restaurants){
-    const filteredRestaurants = restaurants[1].cards.filter((restaurant) =>{
-        return restaurant.name.toLowerCase().includes(searchTxt.toLowerCase())
+    const filteredRestaurants = restaurants.cards.filter((restaurant) =>{
+        return restaurant.data.name.toLowerCase().includes(searchTxt.toLowerCase())
     });
-    return [
-        {},
-        {
-            cards: filteredRestaurants
-        }
-    ];
+    return {cards: filteredRestaurants}
 }
 
 const Body = () => {
 
     //react state variable
     const [searchTxt, setSearchTxt] = useState("");
-    const [restaurants, setRestaurant] = useState(restaurantList);
+    const [restaurants, setRestaurant] = useState();
+
+    //empty dependancy array => once after render
+    //dependency array [searchTxt] => once after initial render + everytime as the dependency changes
+    useEffect(()=>{
+        //make api call
+        getRestaurants();
+    }, []);
+    
+    async function getRestaurants(){
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=15.3647083&lng=75.1239547&page_type=DESKTOP_WEB_LISTING");
+        const json = await data.json();
+        setRestaurant(json?.data?.cards[2]?.data?.data);
+    }
 
     return (
         <>
@@ -38,14 +46,14 @@ const Body = () => {
                 
                 <button className="search-btn" onClick={()=>{
                     //onclick filter data and then update the restaurantList state variable
-                    const data = filterData(searchTxt, restaurantList);
+                    const data = filterData(searchTxt, restaurants);
                     setRestaurant(data);
                 }}>Search</button>
             </div>
             
             <div className="restaurant-list">
-                {restaurants[1].cards.map((card) => (
-                    <RestaurantCard key={card.id} {...card} />
+                {restaurants?.cards.map((card) => (
+                    <RestaurantCard key = {card.data.id} {...card.data} />
                 ))}
 
 

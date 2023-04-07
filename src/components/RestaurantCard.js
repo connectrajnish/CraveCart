@@ -1,10 +1,10 @@
-const RestaurantCard = ({img, name, cuisines, rating}) => {
+const RestaurantCard = ({cloudinaryImageId, name, cuisines, avgRating}) => {
     return (
         <div className="card">
-            <img src={img}/>
+            <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"+cloudinaryImageId}/>
             <h2>{name}</h2>
-            <h4>{cuisines.join(', ')}</h4>
-            <h5>{rating} stars</h5>
+            <h5>{cuisines.join(', ')}</h5>
+            <h5>{avgRating} stars</h5>
         </div>
     );
 };
