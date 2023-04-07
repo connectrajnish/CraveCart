@@ -27454,25 +27454,85 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
 var _constants = require("../constants");
+var _constantsDefault = parcelHelpers.interopDefault(_constants);
 var _restaurantCard = require("./RestaurantCard");
 var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
+var _s = $RefreshSig$();
+function filterData(searchTxt, restaurants) {
+    const filteredRestaurants = restaurants[1].cards.filter((restaurant)=>{
+        return restaurant.name.toLowerCase().includes(searchTxt.toLowerCase());
+    });
+    return [
+        {},
+        {
+            cards: filteredRestaurants
+        }
+    ];
+}
 const Body = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "restaurant-list",
-        children: (0, _constants.config)[1].cards.map((card)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
-                ...card
-            }, card.id, false, {
+    _s();
+    //react state variable
+    const [searchTxt, setSearchTxt] = (0, _react.useState)("");
+    const [restaurants, setRestaurant] = (0, _react.useState)((0, _constantsDefault.default));
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "search-container",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        type: "text",
+                        className: "search-input",
+                        placeholder: "Search",
+                        value: searchTxt,
+                        //normal variables can't be changed in react, so onChange function will callback
+                        onChange: (e)=>{
+                            // whatever written in input it'll be passed to the searchTxt i.e. from parent to child
+                            setSearchTxt(e.target.value);
+                        }
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 27,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "search-btn",
+                        onClick: ()=>{
+                            //onclick filter data and then update the restaurantList state variable
+                            const data = filterData(searchTxt, (0, _constantsDefault.default));
+                            setRestaurant(data);
+                        },
+                        children: "Search"
+                    }, void 0, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 39,
+                        columnNumber: 17
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 10,
-                columnNumber: 17
-            }, undefined))
-    }, void 0, false, {
-        fileName: "src/components/Body.js",
-        lineNumber: 8,
-        columnNumber: 9
-    }, undefined);
+                lineNumber: 26,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "restaurant-list",
+                children: restaurants[1].cards.map((card)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
+                        ...card
+                    }, card.id, false, {
+                        fileName: "src/components/Body.js",
+                        lineNumber: 48,
+                        columnNumber: 21
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/components/Body.js",
+                lineNumber: 46,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true);
 };
+_s(Body, "d2MT1nQb5cBPVZIGYGq8xQ4yoKo=");
 _c = Body;
 exports.default = Body;
 var _c;
@@ -27483,11 +27543,10 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../constants":"3huJa","./RestaurantCard":"bMboU"}],"3huJa":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../constants":"3huJa","./RestaurantCard":"bMboU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"3huJa":[function(require,module,exports) {
 //config driven UI
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "config", ()=>config);
 const config = [
     {
         type: "carousel",
@@ -27516,7 +27575,7 @@ const config = [
                 id: "1"
             },
             {
-                name: "McDonald",
+                name: "McDonald2",
                 img: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/262656fef145b5595ea2a7cc68508b20",
                 cuisines: [
                     "Burgers",
@@ -27528,7 +27587,7 @@ const config = [
                 id: "2"
             },
             {
-                name: "McDonald",
+                name: "McDonald3",
                 img: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/262656fef145b5595ea2a7cc68508b20",
                 cuisines: [
                     "Burgers",
@@ -27540,7 +27599,7 @@ const config = [
                 id: "3"
             },
             {
-                name: "McDonald",
+                name: "McDonald4",
                 img: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/262656fef145b5595ea2a7cc68508b20",
                 cuisines: [
                     "Burgers",
@@ -27554,6 +27613,7 @@ const config = [
         ]
     }
 ];
+exports.default = config;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bMboU":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ffb1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
@@ -27646,6 +27706,6 @@ $RefreshReg$(_c, "Footer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","jC2qd","8lqZg"], "8lqZg", "parcelRequire5268")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","jC2qd","8lqZg"], "8lqZg", "parcelRequire5268")
 
 //# sourceMappingURL=index.975ef6c8.js.map
