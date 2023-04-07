@@ -27455,27 +27455,34 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
-var _constants = require("../constants");
-var _constantsDefault = parcelHelpers.interopDefault(_constants);
+// import restaurantList  from "../constants";
 var _restaurantCard = require("./RestaurantCard");
 var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
 var _s = $RefreshSig$();
 function filterData(searchTxt, restaurants) {
-    const filteredRestaurants = restaurants[1].cards.filter((restaurant)=>{
-        return restaurant.name.toLowerCase().includes(searchTxt.toLowerCase());
+    const filteredRestaurants = restaurants.cards.filter((restaurant)=>{
+        return restaurant.data.name.toLowerCase().includes(searchTxt.toLowerCase());
     });
-    return [
-        {},
-        {
-            cards: filteredRestaurants
-        }
-    ];
+    return {
+        cards: filteredRestaurants
+    };
 }
 const Body = ()=>{
     _s();
     //react state variable
     const [searchTxt, setSearchTxt] = (0, _react.useState)("");
-    const [restaurants, setRestaurant] = (0, _react.useState)((0, _constantsDefault.default));
+    const [restaurants, setRestaurant] = (0, _react.useState)();
+    //empty dependancy array => once after render
+    //dependency array [searchTxt] => once after initial render + everytime as the dependency changes
+    (0, _react.useEffect)(()=>{
+        //make api call
+        getRestaurants();
+    }, []);
+    async function getRestaurants() {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=15.3647083&lng=75.1239547&page_type=DESKTOP_WEB_LISTING");
+        const json = await data.json();
+        setRestaurant(json?.data?.cards[2]?.data?.data);
+    }
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27493,46 +27500,46 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 27,
+                        lineNumber: 35,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "search-btn",
                         onClick: ()=>{
                             //onclick filter data and then update the restaurantList state variable
-                            const data = filterData(searchTxt, (0, _constantsDefault.default));
+                            const data = filterData(searchTxt, restaurants);
                             setRestaurant(data);
                         },
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 39,
+                        lineNumber: 47,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 26,
+                lineNumber: 34,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "restaurant-list",
-                children: restaurants[1].cards.map((card)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
-                        ...card
-                    }, card.id, false, {
+                children: restaurants?.cards.map((card)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
+                        ...card.data
+                    }, card.data.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 48,
+                        lineNumber: 56,
                         columnNumber: 21
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 46,
+                lineNumber: 54,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(Body, "d2MT1nQb5cBPVZIGYGq8xQ4yoKo=");
+_s(Body, "F3HuWSmoebtQniTlIkEZ1g0upDM=");
 _c = Body;
 exports.default = Body;
 var _c;
@@ -27543,79 +27550,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../constants":"3huJa","./RestaurantCard":"bMboU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"3huJa":[function(require,module,exports) {
-//config driven UI
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-const config = [
-    {
-        type: "carousel",
-        cards: [
-            {
-                offerName: "50% off"
-            },
-            {
-                offerName: "No Delivery Charge"
-            }
-        ]
-    },
-    {
-        type: "restraunts",
-        cards: [
-            {
-                name: "McDonald",
-                img: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/262656fef145b5595ea2a7cc68508b20",
-                cuisines: [
-                    "Burgers",
-                    "Beverages",
-                    "Cafe",
-                    "Desserts"
-                ],
-                rating: "4.2",
-                id: "1"
-            },
-            {
-                name: "McDonald2",
-                img: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/262656fef145b5595ea2a7cc68508b20",
-                cuisines: [
-                    "Burgers",
-                    "Beverages",
-                    "Cafe",
-                    "Desserts"
-                ],
-                rating: "4.2",
-                id: "2"
-            },
-            {
-                name: "McDonald3",
-                img: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/262656fef145b5595ea2a7cc68508b20",
-                cuisines: [
-                    "Burgers",
-                    "Beverages",
-                    "Cafe",
-                    "Desserts"
-                ],
-                rating: "4.2",
-                id: "3"
-            },
-            {
-                name: "McDonald4",
-                img: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/262656fef145b5595ea2a7cc68508b20",
-                cuisines: [
-                    "Burgers",
-                    "Beverages",
-                    "Cafe",
-                    "Desserts"
-                ],
-                rating: "4.2",
-                id: "4"
-            }
-        ]
-    }
-];
-exports.default = config;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bMboU":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./RestaurantCard":"bMboU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"bMboU":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ffb1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27625,12 +27560,12 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const RestaurantCard = ({ img , name , cuisines , rating  })=>{
+const RestaurantCard = ({ cloudinaryImageId , name , cuisines , avgRating  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "card",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                src: img
+                src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId
             }, void 0, false, {
                 fileName: "src/components/RestaurantCard.js",
                 lineNumber: 4,
@@ -27643,7 +27578,7 @@ const RestaurantCard = ({ img , name , cuisines , rating  })=>{
                 lineNumber: 5,
                 columnNumber: 13
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
                 children: cuisines.join(", ")
             }, void 0, false, {
                 fileName: "src/components/RestaurantCard.js",
@@ -27652,7 +27587,7 @@ const RestaurantCard = ({ img , name , cuisines , rating  })=>{
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
                 children: [
-                    rating,
+                    avgRating,
                     " stars"
                 ]
             }, void 0, true, {
