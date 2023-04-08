@@ -34,13 +34,21 @@ const Body = () => {
     }
 
     //early return when empty i.e. do no render the component
-    if(!allRestaurants) return null;
+    // if(!allRestaurants) return null;
+    if(allRestaurants === undefined) {
+        return <Shimmer />;
+    }
 
     //if no filtered restaurants
-    // if(filteredRestaurants.cards.length==0)
-    //     return (filteredRestaurants.cards.length==0)?<Shimmer/>:<h2>No restaurant matches your filter!!!</h2>
+    // if (filteredRestaurants.cards.length === 0) {
+    //     return (
+    //         <Shimmer/>
+    //          <h2>No restaurant matches your filter!!!</h2>
+    //     );
+    // }
+      
 
-    return (allRestaurants.cards.length==0)?<Shimmer/>:(
+    return (
         <>
             <div className="search-container">
                 <input
@@ -67,7 +75,7 @@ const Body = () => {
                     <RestaurantCard key = {card.data.id} {...card.data} />
                 ))}
 
-
+                {filteredRestaurants.cards.length==0 && <h2>No restaurant matches your filter!!!</h2>}
 
                 {/* other ways */}
                 {/* {restaurantList[1].cards.map(RestaurantCard)}

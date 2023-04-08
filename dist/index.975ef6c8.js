@@ -27522,15 +27522,20 @@ const Body = ()=>{
     // console.log(filteredRestaurants?.cards.length);
     }
     //early return when empty i.e. do no render the component
-    if (!allRestaurants) return null;
-    //if no filtered restaurants
-    // if(filteredRestaurants.cards.length==0)
-    //     return (filteredRestaurants.cards.length==0)?<Shimmer/>:<h2>No restaurant matches your filter!!!</h2>
-    return allRestaurants.cards.length == 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
+    // if(!allRestaurants) return null;
+    if (allRestaurants === undefined) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 43,
-        columnNumber: 45
-    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        lineNumber: 39,
+        columnNumber: 16
+    }, undefined);
+    //if no filtered restaurants
+    // if (filteredRestaurants.cards.length === 0) {
+    //     return (
+    //         <Shimmer/>
+    //          <h2>No restaurant matches your filter!!!</h2>
+    //     );
+    // }
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "search-container",
@@ -27547,7 +27552,7 @@ const Body = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 46,
+                        lineNumber: 54,
                         columnNumber: 17
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -27560,27 +27565,36 @@ const Body = ()=>{
                         children: "Search"
                     }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 58,
+                        lineNumber: 66,
                         columnNumber: 17
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 45,
+                lineNumber: 53,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "restaurant-list",
-                children: filteredRestaurants?.cards.map((card)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
-                        ...card.data
-                    }, card.data.id, false, {
+                children: [
+                    filteredRestaurants?.cards.map((card)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
+                            ...card.data
+                        }, card.data.id, false, {
+                            fileName: "src/components/Body.js",
+                            lineNumber: 75,
+                            columnNumber: 21
+                        }, undefined)),
+                    filteredRestaurants.cards.length == 0 && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        children: "No restaurant matches your filter!!!"
+                    }, void 0, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 67,
-                        columnNumber: 21
-                    }, undefined))
-            }, void 0, false, {
+                        lineNumber: 78,
+                        columnNumber: 57
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/components/Body.js",
-                lineNumber: 65,
+                lineNumber: 73,
                 columnNumber: 13
             }, undefined)
         ]
@@ -27670,8 +27684,15 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 const Shimmer = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-        children: "Shimmer UI Loading..."
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "restaurant-list",
+        children: Array(10).fill("").map((e)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "shimmer-card"
+            }, index, false, {
+                fileName: "src/components/Shimmer.js",
+                lineNumber: 4,
+                columnNumber: 47
+            }, undefined))
     }, void 0, false, {
         fileName: "src/components/Shimmer.js",
         lineNumber: 3,
