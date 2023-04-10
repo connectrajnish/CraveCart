@@ -49,4 +49,40 @@
   margin: 20px;
 }
 
+.page_404 {
+  background: #fff;
+  padding: 40px 0;
+  font-family: Arvo, serif;
+}
+
+.page_404 img {
+  width: 100%;
+}
+
+.four_zero_four_bg {
+  height: 400px;
+  background-image: url("https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif");
+  background-position: center;
+}
+
+.four_zero_four_bg h1, .four_zero_four_bg h3 {
+  font-size: 80px;
+}
+
+.link_404 {
+  background: #39ac31;
+  margin: 20px 0;
+  padding: 10px 20px;
+  display: inline-block;
+  color: #fff !important;
+}
+
+.contant_box_404 {
+  margin-top: -50px;
+}
+
+.page_404 {
+  text-align: center;
+}
+
 /*# sourceMappingURL=index.9e4c6fd2.css.map */

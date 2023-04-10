@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Title = () => {
     return (<a href='/'>
@@ -8,10 +9,6 @@ const Title = () => {
 //no need to export title bcz it's use is in header only
 
 
-function loggedInUser(){
-    return true;
-}
-
 //header component
 const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -20,9 +17,9 @@ const Header = () => {
             <Title />
             <div className="nav-items">
                 <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
+                <li><Link to= '/'>Home</Link></li>
+                <li><Link to= '/about'>About</Link></li>
+                <li><Link to= '/contact'>Contact</Link></li>
                 <li>Cart</li>
                 <li>{isLoggedIn?<button onClick={()=>{setIsLoggedIn(false)}}>Log Out</button>:<button onClick={()=>{setIsLoggedIn(true)}}>Log In</button>}</li>
                 </ul>
