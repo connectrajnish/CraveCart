@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 
 
 
 
 const Body = () => {
-
     //react state variable
     const [searchTxt, setSearchTxt] = useState("");
     const [allRestaurants, setAllRestaurants] = useState();
@@ -29,6 +29,11 @@ const Body = () => {
         // console.log(filteredRestaurants?.cards.length);
     }
 
+    //check if online or offline
+    const isOnline = useOnline();
+    if(!isOnline){
+        return <h1>Please check your connection</h1>;
+    }
     //early return when empty i.e. do no render the component
     // if(!allRestaurants) return null;
     if(allRestaurants === undefined) {

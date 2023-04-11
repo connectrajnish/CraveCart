@@ -12,7 +12,7 @@ const About = () => {
             {/* <Link to='profile'><Profile/></Link> */}
             {/* intead of outlet we can simply give <Profile/> too */}
             <Outlet/>
-            <Profile name = {'Rajnish From Functional Component'}/>
+            {/* <Profile name = {'Rajnish From Functional Component'}/> */}
             {/* <ProfileClass name = {'Rajnish From Class Component'}/> */}
         </div>
     );
