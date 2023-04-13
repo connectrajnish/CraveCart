@@ -13,7 +13,6 @@ const Body = () => {
     const [searchTxt, setSearchTxt] = useState("");
     const [allRestaurants, setAllRestaurants] = useState();
     const [filteredRestaurants, setFilteredRestaurants] = useState();
-
     //empty dependancy array => once after render
     //dependency array [searchTxt] => once after initial render + everytime as the dependency changes
     useEffect(()=>{

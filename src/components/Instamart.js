@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import UserContext from "../utils/UserContext";
 
 const Section = ({title, content, isVisible, setIsVisible})=>{
     return (
@@ -12,6 +13,7 @@ const Section = ({title, content, isVisible, setIsVisible})=>{
 
 const Instamart = () => {
     const[visibleSection, setIsVisibleSection] = useState("about");
+    const {user} = useContext(UserContext);
     return (
         <div>
             <h1>Instamart</h1>
@@ -31,7 +33,7 @@ const Instamart = () => {
             />
             <Section
                 title={'Contact'}
-                content={'Rajnish Kumar'}
+                content={user.email+' ('+user.name+')'}
                 isVisible={visibleSection == 'contact'}
                 setIsVisible={(sec)=>{setIsVisibleSection(sec)}}    
             />

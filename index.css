@@ -50,10 +50,13 @@
 }
 
 .restaurant-list{
+    /* border: 1px solid black; */
     display: flex;
     flex-wrap: wrap;
-    padding: 15px;
-    position: relative;
+    /* padding: 10px; */
+}
+.search-input{
+    margin: 10px;
 }
 
 .shimmer-card{
@@ -63,7 +66,7 @@
     margin: 20px;
 }
 .instamart-section{
-    border: 2px solid black;
+    border: 1px solid rgb(37, 37, 37);
     margin: 5px;
     padding: 5px;
     text-align: justify;
