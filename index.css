@@ -47,7 +47,15 @@
     background-color: lightgrey;
     margin: 20px;
 }
-
+.instamart-section{
+    border: 2px solid black;
+    margin: 5px;
+    padding: 5px;
+    text-align: justify;
+}
+.instamart-section > p{
+    color: rgb(65, 63, 63);
+}
 
 /*======================
     404 page

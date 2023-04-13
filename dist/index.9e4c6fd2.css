@@ -49,6 +49,17 @@
   margin: 20px;
 }
 
+.instamart-section {
+  text-align: justify;
+  border: 2px solid #000;
+  margin: 5px;
+  padding: 5px;
+}
+
+.instamart-section > p {
+  color: #413f3f;
+}
+
 .page_404 {
   background: #fff;
   padding: 40px 0;

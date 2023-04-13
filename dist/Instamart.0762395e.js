@@ -587,31 +587,132 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const Instamart = ()=>{
+var _react = require("react");
+var _s = $RefreshSig$();
+const Section = ({ title , content , isVisible , setIsVisible  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-            children: "Instamart"
-        }, void 0, false, {
-            fileName: "src/components/Instamart.js",
-            lineNumber: 4,
-            columnNumber: 13
-        }, undefined)
-    }, void 0, false, {
+        className: "instamart-section",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                children: title
+            }, void 0, false, {
+                fileName: "src/components/Instamart.js",
+                lineNumber: 6,
+                columnNumber: 13
+            }, undefined),
+            isVisible ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>{
+                    setIsVisible("");
+                },
+                children: "Hide"
+            }, void 0, false, {
+                fileName: "src/components/Instamart.js",
+                lineNumber: 7,
+                columnNumber: 24
+            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>{
+                    setIsVisible(title.toLowerCase());
+                },
+                children: "Show"
+            }, void 0, false, {
+                fileName: "src/components/Instamart.js",
+                lineNumber: 7,
+                columnNumber: 79
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: isVisible && content
+            }, void 0, false, {
+                fileName: "src/components/Instamart.js",
+                lineNumber: 8,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "src/components/Instamart.js",
-        lineNumber: 3,
+        lineNumber: 5,
         columnNumber: 9
     }, undefined);
 };
-_c = Instamart;
+_c = Section;
+const Instamart = ()=>{
+    _s();
+    const [visibleSection, setIsVisibleSection] = (0, _react.useState)("about");
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                children: "Instamart"
+            }, void 0, false, {
+                fileName: "src/components/Instamart.js",
+                lineNumber: 17,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
+                title: "About",
+                content: "Instamart is a chain of online convenience stores that provides instant meals, snacks, fruits and vegetables, ice creams and other things through virtual convenience stores. Swiggy provides these things through its partner “dark stores,” which are exclusively available online and its hubs. You can download the Instamart app on Google Play Store and get all your groceries delivered to your doorstep hassle-free.",
+                isVisible: visibleSection == "about",
+                setIsVisible: (sec)=>{
+                    setIsVisibleSection(sec);
+                }
+            }, void 0, false, {
+                fileName: "src/components/Instamart.js",
+                lineNumber: 18,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
+                title: "Products",
+                content: "Instamart offers a wide range of products such as daily essentials, fresh fruits & veggies, dairy, bread & eggs, snacks & indulgences and emergency supplies delivered in minutes. Swiggy’s Instamart will likely be in the non-food category. These include cleaning equipment, toilet cleaners and dustbin bags. You can also buy a Swiggy One membership for unlimited free delivery on orders above ₹99.",
+                isVisible: visibleSection == "products",
+                setIsVisible: (sec)=>{
+                    setIsVisibleSection(sec);
+                }
+            }, void 0, false, {
+                fileName: "src/components/Instamart.js",
+                lineNumber: 26,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
+                title: "Contact",
+                content: "Rajnish Kumar",
+                isVisible: visibleSection == "contact",
+                setIsVisible: (sec)=>{
+                    setIsVisibleSection(sec);
+                }
+            }, void 0, false, {
+                fileName: "src/components/Instamart.js",
+                lineNumber: 32,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Section, {
+                title: "Careers",
+                content: "No Careers Available!!!",
+                isVisible: visibleSection == "careers",
+                setIsVisible: (sec)=>{
+                    setIsVisibleSection(sec);
+                }
+            }, void 0, false, {
+                fileName: "src/components/Instamart.js",
+                lineNumber: 38,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/components/Instamart.js",
+        lineNumber: 16,
+        columnNumber: 9
+    }, undefined);
+};
+_s(Instamart, "ajCO6CrswkQ70T2Q1ztd8DrtaZU=");
+_c1 = Instamart;
 exports.default = Instamart;
-var _c;
-$RefreshReg$(_c, "Instamart");
+var _c, _c1;
+$RefreshReg$(_c, "Section");
+$RefreshReg$(_c1, "Instamart");
 
   $parcel$ReactRefreshHelpers$8238.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","2paN5"], null, "parcelRequire5268")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}]},["1xC6H","2paN5"], null, "parcelRequire5268")
 
 //# sourceMappingURL=Instamart.0762395e.js.map

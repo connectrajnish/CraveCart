@@ -3089,7 +3089,7 @@ $RefreshReg$(_c1, "AppLayout");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Header":"hsJbF","./components/Body":"8yaV8","./components/Footer":"8pPOA","./components/About":"9R1Eu","./components/Contact":"cgAOG","./components/Error":"kvula","./components/Profile":"h0rtF","react-router-dom":"9xmpe","./components/RestaurantMenu":"8PuJ6","ee90a7c8d79e486":"jfVio","./components/Shimmer":"g6ZGj"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/Header":"hsJbF","./components/Body":"8yaV8","./components/Footer":"8pPOA","./components/About":"9R1Eu","./components/Contact":"cgAOG","./components/Error":"kvula","./components/Profile":"h0rtF","react-router-dom":"9xmpe","./components/RestaurantMenu":"8PuJ6","./components/Shimmer":"g6ZGj","ee90a7c8d79e486":"jfVio"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("59877a67e9e9cbe");
 
