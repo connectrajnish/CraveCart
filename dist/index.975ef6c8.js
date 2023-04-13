@@ -32935,7 +32935,7 @@ const RestaurantCard = ({ cloudinaryImageId , name , cuisines , avgRating  })=>{
                 lineNumber: 5,
                 columnNumber: 13
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 children: cuisines.join(", ")
             }, void 0, false, {
                 fileName: "src/components/RestaurantCard.js",

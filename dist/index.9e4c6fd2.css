@@ -27,9 +27,24 @@
 
 .card {
   width: 200px;
-  border: 1px solid #000;
-  margin: 10px auto;
-  padding: 10px;
+  justify-content: center;
+  margin: 20px;
+  transition: all .2s;
+  box-shadow: 0 13px 27px -5px #32325d40, 0 8px 16px -8px #0000004d, 0 -6px 16px -6px #00000008;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 13px 40px -5px #32325d1f, 0 8px 32px -8px #00000024, 0 -6px 32px -6px #00000005;
+}
+
+.card > h2, h5 {
+  padding: 0 10px;
+}
+
+.card > p {
+  color: #2b2a2a;
+  padding: 0 10px;
 }
 
 .card > img {
@@ -38,8 +53,9 @@
 
 .restaurant-list {
   flex-wrap: wrap;
-  padding: auto;
+  padding: 15px;
   display: flex;
+  position: relative;
 }
 
 .shimmer-card {
