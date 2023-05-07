@@ -5,3 +5,61 @@ in js file
     create element or components
     create root in reactdom by fetching the root div of html
     then using render method of reactdom render the component
+
+to use redux
+    Create store and configure it using configureStore() from RTK
+    Provide store to either whole AppLayout or to a particular component
+        <Provider store = {store}> - import Provider from react-redux
+    Create Slice and add the slice to the store configuration
+        reducer: {
+            name: sliceName
+        }
+    to create a slice
+        import createSlice from RTK
+            createSlice({
+                name: 'cart',
+                initialState:
+                reducer: {
+                    addItem: (state, action) => {state.items.push = action.payload}
+                    removeItem: (state, action)=> {}
+                }
+            })
+    export const {addItem, removeItem} = createSlice.action
+    export default cartSlice.reducer
+
+    also put the slice in configureStore
+        reducer: {
+            cart: cartSlice,
+            user: userSlice
+        }
+
+    subscribe to store
+        import { useSelector } from "react-redux";
+        const cartItems = useSelector(store => store.cart.items);
+    
+    to dispatch an action
+        import useDispatcher from "react-redux"
+         <div>
+            <button className="action-dispatcher" onClick={()=>handleAddItem}> </button>
+        </div>
+
+        const dispatch = useDispatch();
+
+        const handleAddItem = () => {
+            //dispatch an action(defined action in the slice) which will add grapes
+            dispatch(addItem('Grapes'));
+        }
+
+   *****major perfermance improvement while subscribing
+        Method - 1
+            const store = useSelector((store) => store)
+            return (<h1> Cart Items - {store.cart.items.length} </h1>)
+        Method - 2
+            const cartItems = useSelector(store => store.cart.items)
+            return (<h1> Cart Items - {cartItems.length} </h1>)
+
+        METHOD - 2 is good because store is very large and incase anything updates in store then this cart items will re-render again and again. Hence always subscribe to the specific portion of the store as required.
+
+*****When we click on Add Item it dispatches an action which calls reducer function which updates the slice of the store and cart is subscribed to the store using useSelectore 
+
+***** Redux devtools extension

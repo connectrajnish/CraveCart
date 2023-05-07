@@ -12,6 +12,9 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
 // import ProfileClass from "./components/ProfileClass";
 // import Instamart from "./components/Instamart";
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import Cart from "./components/Cart";
 
 const Instamart = lazy(()=>import('./components/Instamart'));
 
@@ -43,12 +46,12 @@ Footer
 
 const AppLayout = () => {
     return (
-        <React.Fragment>     
+        <Provider store={store}>    
             <Header/>
             {/* Outlet will be filled dynamically i.e. conditional routing*/}
             <Outlet/>   
             <Footer/>
-        </React.Fragment>
+        </Provider>
     );
 };
 
@@ -83,6 +86,10 @@ const appRouter = createBrowserRouter([
             {
                 path: 'instamart',
                 element: <Suspense fallback={<Shimmer/>}><Instamart/></Suspense>
+            },
+            {
+                path: '/cart',
+                element: <Cart/>
             }
         ]
     }
