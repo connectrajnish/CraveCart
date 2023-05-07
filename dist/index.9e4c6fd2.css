@@ -27,9 +27,25 @@
 
 .card {
   width: 200px;
-  border: 1px solid #000;
-  margin: 10px;
-  padding: 10px;
+  justify-content: center;
+  margin: 20px;
+  padding: 1px;
+  transition: all .2s;
+  box-shadow: 0 3px 27px -5px #32325d40, 0 8px 16px -8px #0000004d, 0 -6px 16px -6px #00000008;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 13px 40px -5px #32325d1f, 0 8px 32px -8px #00000024, 0 -6px 32px -6px #00000005;
+}
+
+.card > h2, h5 {
+  padding: 0 10px;
+}
+
+.card > p {
+  color: #2b2a2a;
+  padding: 0 10px;
 }
 
 .card > img {
@@ -39,6 +55,64 @@
 .restaurant-list {
   flex-wrap: wrap;
   display: flex;
+}
+
+.search-input {
+  margin: 10px;
+}
+
+.shimmer-card {
+  width: 200px;
+  height: 350px;
+  background-color: #d3d3d3;
+  margin: 20px;
+}
+
+.instamart-section {
+  text-align: justify;
+  border: 1px solid #252525;
+  margin: 5px;
+  padding: 5px;
+}
+
+.instamart-section > p {
+  color: #413f3f;
+}
+
+.page_404 {
+  background: #fff;
+  padding: 40px 0;
+  font-family: Arvo, serif;
+}
+
+.page_404 img {
+  width: 100%;
+}
+
+.four_zero_four_bg {
+  height: 400px;
+  background-image: url("https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif");
+  background-position: center;
+}
+
+.four_zero_four_bg h1, .four_zero_four_bg h3 {
+  font-size: 80px;
+}
+
+.link_404 {
+  background: #39ac31;
+  margin: 20px 0;
+  padding: 10px 20px;
+  display: inline-block;
+  color: #fff !important;
+}
+
+.contant_box_404 {
+  margin-top: -50px;
+}
+
+.page_404 {
+  text-align: center;
 }
 
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
